@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+cloud:
+  aws:
+    stack:
+      auto: false
+server:
+  servlet:
+    context-path: /backend-for-frontend
+service:
+  dns: http://internal-mynavi-sample-alb-private-XXXXXX.ap-northeast-1.elb.amazonaws.com
