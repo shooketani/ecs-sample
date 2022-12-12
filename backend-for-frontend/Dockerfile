@@ -14,7 +14,7 @@ RUN tar xvfz openjdk-17.0.1_linux-x64_bin.tar.gz
 RUN rm -f openjdk-17.0.1_linux-x64_bin.tar.gz
 WORKDIR ~/
 
-RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+RUN wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo --no-check-certificate
 
 RUN sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 
@@ -27,11 +27,11 @@ RUN alternatives --set java /usr/lib/jvm/jdk-17.0.1/bin/java
 
 RUN git clone https://github.com/shooketani/ecs-sample.git /usr/local/ecs-sample
 
-RUN mvn install -f /usr/local/mynavi-sample-aws-ecs/pom.xml
+RUN mvn install -f /usr/local/ecs-sample/pom.xml
 
 RUN cp /etc/localtime /etc/localtime.org
 
-RUN ln -sf  /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 EXPOSE 8080
 
