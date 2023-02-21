@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EntityScan("ecs.sample.backend.app.model.entity")
+@EntityScan("ecs.sample.backend.app.model.entity.*")
 @EnableJpaRepositories(basePackages="ecs.sample.backend.app.repository")
 public class JpaConfig {
 	
