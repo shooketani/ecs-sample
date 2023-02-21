@@ -16,7 +16,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages="ecs.sample.backend.domain.repository")
+@EnableJpaRepositories(basePackages="ecs.sample.backend.app.repository")
 public class JpaConfig {
 	
 	@Autowired
