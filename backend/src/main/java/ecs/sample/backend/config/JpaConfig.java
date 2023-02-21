@@ -1,6 +1,7 @@
 package ecs.sample.backend.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -16,6 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@EntityScan("ecs.sample.backend.app.model.entity")
 @EnableJpaRepositories(basePackages="ecs.sample.backend.app.repository")
 public class JpaConfig {
 	
