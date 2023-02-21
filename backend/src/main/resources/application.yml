@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: dev
+  dataSource:
+        url: jdbc:postgresql://ma-oketanisu-rds.cohnmw0q2ggp.ap-northeast-1.rds.amazonaws.com:5432/postgres
+        username: postgres
+        password: postgres
+        driver-class-name: org.postgresql.Driver
 server:
   servlet:
    context-path: /backend
